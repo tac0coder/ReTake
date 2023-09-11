@@ -1,4 +1,7 @@
 import cv2,os,pygame
+
+if not os.path.exists('Videos'):
+    os.mkdir('Videos')
   
 pygame.init()
 
