@@ -7,6 +7,7 @@ pygame.init()
 
 window = pygame.display.set_mode((300,200))
 buttons=[pygame.Rect(10,10,80,80),pygame.Rect(110,10,80,80),pygame.Rect(210,10,80,80)]
+#Buttons
 pygame.draw.rect(window,(0,255,0),buttons[0])
 pygame.draw.rect(window,(255,0,0),buttons[1])
 pygame.draw.rect(window,(255,255,255),buttons[2])
@@ -22,11 +23,12 @@ while not source_done:
 print(max_source)
 vid = cv2.VideoCapture(source)
 font = pygame.font.SysFont("Sans-Serif",20)
+
+#Label and instructions
 window.blit(font.render("Use the green and red buttons to go",True,(255,255,255)),(10,110))
 window.blit(font.render("through the cameras connected. When",True,(255,255,255)),(10,130))
 window.blit(font.render("you find the camera you want to use, click",True,(255,255,255)),(10,150))
 window.blit(font.render("the white button.",True,(255,255,255)),(10,170))
-
 window.blit(font.render("Next Cam",True,(0,0,0)),(10,10))
 window.blit(font.render("Last Cam",True,(0,0,0)),(110,10))
 window.blit(font.render("Save",True,(0,0,0)),(210,10))
@@ -58,9 +60,12 @@ vid = cv2.VideoCapture(source)
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 out = cv2.VideoWriter(f'Videos/vid{num}.mp4', fourcc, 30.0, (640, 480))
 
+#Buttons
 pygame.draw.rect(window,(0,255,0),buttons[0])
 pygame.draw.rect(window,(255,0,0),buttons[1])
 pygame.draw.rect(window,(255,255,255),buttons[2])
+
+#Labels and instructions
 window.blit(font.render("Stop & Save",True,(0,0,0)),(10,10))
 window.blit(font.render("Stop & Delete",True,(0,0,0)),(110,10))
 window.blit(font.render("Quit",True,(0,0,0)),(210,10))
